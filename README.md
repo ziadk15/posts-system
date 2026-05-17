@@ -26,6 +26,30 @@ cd posts-system
 docker compose up --build
 ```
 
+
+## Project Structure
+src/
+├── domain/          # Business logic and entities
+│   └── post/
+│       ├── Post.js
+│       └── PostRepository.js
+├── application/     # Use cases
+│   └── post/
+│       ├── CreatePost.js
+│       ├── GetPost.js
+│       └── ListPosts.js
+├── infrastructure/  # DB and messaging
+│   ├── db/
+│   │   ├── database.js
+│   │   └── MongoPostRepository.js
+│   └── messaging/
+│       ├── KafkaProducer.js
+│       └── KafkaConsumer.js
+└── api/             # HTTP layer
+├── routes/
+│   └── postRoutes.js
+└── server.js
+
 ## API Endpoints
 
 | Method | Endpoint | Description |
